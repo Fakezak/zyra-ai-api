@@ -3,39 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra AI API Generator</title>
-<style>
-body { font-family: Arial; background: #1a1a1a; color: #fff; display:flex; justify-content:center; align-items:center; height:100vh; }
-.container { text-align:center; width:400px; }
-button { padding:10px 20px; margin-top:20px; cursor:pointer; }
-#apiKey { margin-top:20px; background:#333; padding:10px; border-radius:5px; word-break:break-all; }
-</style>
+<title>Zyra AI Front-End</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-  <h1>Zyra AI API Generator</h1>
+  <h1>Zyra AI</h1>
+  
   <button id="generateBtn">Generate API Key</button>
   <div id="apiKey"></div>
+  
+  <hr>
+  
+  <textarea id="message" placeholder="Type a message to Zyra..."></textarea>
+  <button id="send">Send Message</button>
+  <div id="response"></div>
 </div>
 
-<script>
-const generateBtn = document.getElementById("generateBtn");
-const apiKeyDiv = document.getElementById("apiKey");
-
-function generateApiKey() {
-    // Generate a 64-character random token
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let token = 'ZYRA-';
-    for (let i = 0; i < 64; i++) {
-        token += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return token;
-}
-
-generateBtn.addEventListener("click", () => {
-    const newKey = generateApiKey();
-    apiKeyDiv.innerText = "Your Zyra API Key: " + newKey;
-});
-</script>
+<script src="main.js"></script>
 </body>
 </html>
